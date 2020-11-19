@@ -5,7 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import com.makhalibagas.ovo.R
+import com.makhalibagas.ovo.adapter.PromoAdapter
+import com.makhalibagas.ovo.model.Promo
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlin.math.abs
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,14 +39,32 @@ class HomeFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        view.vp_promo.adapter = PromoAdapter(listData())
+        view.vp_promo.clipToPadding = false
+        view.vp_promo.clipChildren = false
+        view.vp_promo.offscreenPageLimit = 3
+        view.vp_promo.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer(15))
+        view.vp_promo.setPageTransformer(compositePageTransformer)
+
+        return view
     }
 
+    private fun listData() = listOf(
+        Promo(R.drawable.img1),
+        Promo(R.drawable.img2),
+        Promo(R.drawable.img3),
+        Promo(R.drawable.img4),
+        Promo(R.drawable.img5),
+        Promo(R.drawable.img6),
+        Promo(R.drawable.img7),
+        Promo(R.drawable.img8)
+    )
     companion object {
         /**
          * Use this factory method to create a new instance of
