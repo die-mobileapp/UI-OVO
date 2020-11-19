@@ -56,6 +56,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun listData() = listOf(
+        Promo(R.drawable.img9),
+        Promo(R.drawable.img11),
+        Promo(R.drawable.img10),
         Promo(R.drawable.img1),
         Promo(R.drawable.img2),
         Promo(R.drawable.img3),
