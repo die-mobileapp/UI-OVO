@@ -118,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/points"
                             android:textColor="#FFBA08"
-                            android:textSize="8sp"
+                            android:textSize="9sp"
                             android:gravity="bottom"
                             android:layout_gravity="bottom"
                             android:layout_marginStart="5dp"
