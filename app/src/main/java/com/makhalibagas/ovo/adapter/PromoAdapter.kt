@@ -12,7 +12,6 @@ import com.makhalibagas.ovo.model.Promo
 class PromoAdapter(private var list: List<Promo>) : RecyclerView.Adapter<PromoAdapter.ViewHolder> (){
 
 
-
     class ViewHolder(v:View) : RecyclerView.ViewHolder(v) {
 
         val img = v.findViewById<RoundedImageView>(R.id.img)

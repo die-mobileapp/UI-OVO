@@ -1,5 +1,6 @@
 package com.makhalibagas.ovo.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -52,6 +53,9 @@ class HomeFragment : Fragment() {
         compositePageTransformer.addTransformer(MarginPageTransformer(15))
         view.vp_promo.setPageTransformer(compositePageTransformer)
 
+        view.linear_topup.setOnClickListener {
+            startActivity(Intent(context, TopupActivity::class.java))
+        }
         return view
     }
 
