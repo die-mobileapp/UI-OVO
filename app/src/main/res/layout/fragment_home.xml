@@ -40,7 +40,9 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:animateLayoutChanges="false">
 
 
         <LinearLayout
@@ -420,8 +422,10 @@
 
 
                     <Button
+                        android:id="@+id/bt_more"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
+                        style="?borderlessButtonStyle"
                         android:background="@drawable/lainnya_icon_svg"/>
 
                     <TextView

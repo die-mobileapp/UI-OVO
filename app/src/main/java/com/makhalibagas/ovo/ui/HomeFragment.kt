@@ -60,6 +60,11 @@ class HomeFragment : Fragment() {
         view.ls_bantuan.setOnClickListener {
             startActivity(Intent(context, HelpActivity::class.java))
         }
+
+        view.bt_more.setOnClickListener {
+            startActivity(Intent(context, MoreActivity::class.java))
+        }
+
         return view
     }
 

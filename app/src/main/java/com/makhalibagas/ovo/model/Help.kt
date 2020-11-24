@@ -1,6 +1,6 @@
 package com.makhalibagas.ovo.model
 
-class Bantuan (
+class Help (
 
     val icon : Int,
     val name : String
