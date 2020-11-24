@@ -56,6 +56,10 @@ class HomeFragment : Fragment() {
         view.linear_topup.setOnClickListener {
             startActivity(Intent(context, TopupActivity::class.java))
         }
+
+        view.ls_bantuan.setOnClickListener {
+            startActivity(Intent(context, HelpActivity::class.java))
+        }
         return view
     }
 
